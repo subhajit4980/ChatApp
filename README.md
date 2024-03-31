@@ -23,6 +23,22 @@ Before you begin, ensure you have the following installed:
 ### Usage
 Once the backend server is running, you can connect to the chat application using your preferred frontend client. Messages sent by one user will be immediately visible to all other users.
 
+## Before Running the Project 
+
+*Start Zookeeper*
+```shell script
+zookeeper-server-start .\config\zookeeper.properties
+```
+
+*Start Kafka*
+```shell script
+kafka-server-start .\config\server.properties
+```
+
+*Create a Topic*
+```
+kafka-topics --create --topic kafka-chat --zookeeper-server localhost:9092
+```
 ### Backend (Spring Boot)
 
 1. Clone this repository:
